@@ -75,7 +75,7 @@ export const adminUpdateFaculty = async (id, data) => {
     `UPDATE faculties
      SET name = ?, contact = ?, qualification = ?
      WHERE id = ?`,
-    [name, contact, qualification, role_id, id]
+    [name, contact, qualification, id]
   );
 
   return result.affectedRows;
