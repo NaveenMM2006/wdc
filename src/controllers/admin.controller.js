@@ -1,4 +1,4 @@
-import { getAllFaculties } from "../services/faculty.service.js";
+import { getAllFaculties,adminUpdateFaculty,deleteFaculty,resetFacultyPassword } from "../services/faculty.service.js";
 
 export const getFaculties = async (req, res) => {
   try {

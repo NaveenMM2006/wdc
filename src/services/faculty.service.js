@@ -19,7 +19,8 @@ export const updateFacultyProfile = async (
   {contact, qualification, profile_photo}
 )=>{
   const [result] = await pool.query(
-    `UPDATE faculties SET contact = ?, qualification = ?, profile_photo = ?`,
+    `UPDATE faculties SET contact = ?, qualification = ?, profile_photo = ?
+    WHERE id = ?`,
     [contact, qualification, profile_photo, facultyId]
   );
   
@@ -68,11 +69,11 @@ export const getAllFaculties = async ({
 };
 
 export const adminUpdateFaculty = async (id, data) => {
-  const { name, contact, qualification, role_id } = data;
+  const { name, contact, qualification } = data;
 
   const [result] = await pool.query(
     `UPDATE faculties
-     SET name = ?, contact = ?, qualification = ?, role_id = ?
+     SET name = ?, contact = ?, qualification = ?
      WHERE id = ?`,
     [name, contact, qualification, role_id, id]
   );
