@@ -13,13 +13,13 @@ export const createNotice = async ({title, content, created_by}) =>{
 export const getAllNotices = async ()=>{
     const [rows] = await pool.query(
         `SELECT n.id, n.title, n.content, n.created_by, n.updated_at, f.name AS created_by
-        FROM notices n JOIN faculties f ON n.created_by =f.id ORDER BY n.created_at DESC`
+        FROM notices n JOIN faculties f ON n.created_by = f.id ORDER BY n.created_at DESC`
     );
 
     return rows;
 };
 
-export const updateNotice = async (id,{tite,content}) => {
+export const updateNotice = async (id,{title,content}) => {
     const [result] = await pool.query(
         `UPDATE notices
          SET title=?,content=?
