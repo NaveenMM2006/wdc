@@ -31,7 +31,7 @@ export const getNotices = async (req, res) => {
 export const editNotice = async (req, res) => {
     try {
         const {id} = req.params;
-        const {titlr, content}= req.body;
+        const {title, content}= req.body;
 
         const updated = await updateNotice(id,{title, content});
 

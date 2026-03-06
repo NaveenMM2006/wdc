@@ -20,6 +20,8 @@ export const getFaculties = async (req, res) => {
 export const updateFacultyByAdmin = async (req, res) => {
   try {
     const { id } = req.params;
+    console.log("Faculty ID:", id);
+    console.log("Body:", req.body);
 
     const updated = await adminUpdateFaculty(id, req.body);
 
