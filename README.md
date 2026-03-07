@@ -44,7 +44,7 @@ This is the **backend API** for the Admin Panel / Faculty Management System. It 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/backend-repo.git
+git clone https://github.com/NaveenMM2006/wdc.git
 cd backend
 
 npm install
